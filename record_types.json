@@ -1,261 +1,331 @@
 [
-   {
-      "type":"A",
-      "decimal_value":1,
-      "rfc":"RFC 1035[1]",
-      "description":"Address record",
-      "func":"Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc."
-   },
-   {
-      "type":"AAAA",
-      "decimal_value":28,
-      "rfc":"RFC 3596[2]",
-      "description":"IPv6 address record",
-      "func":"Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host."
-   },
-   {
-      "type":"AFSDB",
-      "decimal_value":18,
-      "rfc":"RFC 1183",
-      "description":"AFS database record",
-      "func":"Location of database servers of an AFS cell. This record is commonly used by AFS clients to contact AFS cells outside their local domain. A subtype of this record is used by the obsolete DCE/DFS file system."
-   },
-   {
-      "type":"APL",
-      "decimal_value":42,
-      "rfc":"RFC 3123",
-      "description":"Address Prefix List",
-      "func":"Specify lists of address ranges, e.g. in CIDR format, for various address families. Experimental."
-   },
-   {
-      "type":"CAA",
-      "decimal_value":257,
-      "rfc":"RFC 6844",
-      "description":"Certification Authority Authorization",
-      "func":"CA pinning, constraining acceptable CAs for a host/domain"
-   },
-   {
-      "type":"CDNSKEY",
-      "decimal_value":60,
-      "rfc":"RFC 7344",
-      "description":"Child DNSKEY",
-      "func":"Child copy of DNSKEY record, for transfer to parent"
-   },
-   {
-      "type":"CDS",
-      "decimal_value":59,
-      "rfc":"RFC 7344",
-      "description":"Child DS",
-      "func":"Child copy of DS record, for transfer to parent"
-   },
-   {
-      "type":"CERT",
-      "decimal_value":37,
-      "rfc":"RFC 4398",
-      "description":"Certificate record",
-      "func":"Stores PKIX, SPKI, PGP, etc."
-   },
-   {
-      "type":"CNAME",
-      "decimal_value":5,
-      "rfc":"RFC 1035[1]",
-      "description":"Canonical name record",
-      "func":"Alias of one name to another: the DNS lookup will continue by retrying the lookup with the new name."
-   },
-   {
-      "type":"DHCID",
-      "decimal_value":49,
-      "rfc":"RFC 4701",
-      "description":"DHCP identifier",
-      "func":"Used in conjunction with the FQDN option to DHCP"
-   },
-   {
-      "type":"DLV",
-      "decimal_value":32769,
-      "rfc":"RFC 4431",
-      "description":"DNSSEC Lookaside Validation record",
-      "func":"For publishing DNSSEC trust anchors outside of the DNS delegation chain. Uses the same format as the DS record. RFC 5074 describes a way of using these records."
-   },
-   {
-      "type":"DNAME",
-      "decimal_value":39,
-      "rfc":"RFC 2672",
-      "description":"Delegation Name",
-      "func":"Alias for a name and all its subnames, unlike CNAME, which is an alias for only the exact name. Like a CNAME record, the DNS lookup will continue by retrying the lookup with the new name."
-   },
-   {
-      "type":"DNSKEY",
-      "decimal_value":48,
-      "rfc":"RFC 4034",
-      "description":"DNS Key record",
-      "func":"The key record used in DNSSEC. Uses the same format as the KEY record."
-   },
-   {
-      "type":"DS",
-      "decimal_value":43,
-      "rfc":"RFC 4034",
-      "description":"Delegation signer",
-      "func":"The record used to identify the DNSSEC signing key of a delegated zone"
-   },
-   {
-      "type":"HIP",
-      "decimal_value":55,
-      "rfc":"RFC 5205",
-      "description":"Host Identity Protocol",
-      "func":"Method of separating the end-point identifier and locator roles of IP addresses."
-   },
-   {
-      "type":"IPSECKEY",
-      "decimal_value":45,
-      "rfc":"RFC 4025",
-      "description":"IPsec Key",
-      "func":"Key record that can be used with IPsec"
-   },
-   {
-      "type":"KEY",
-      "decimal_value":25,
-      "rfc":"RFC 2535[3] and RFC 2930[4]",
-      "description":"Key record",
-      "func":"Used only for SIG(0) (RFC 2931) and TKEY (RFC 2930).[5] RFC 3445 eliminated their use for application keys and limited their use to DNSSEC.[6] RFC 3755 designates DNSKEY as the replacement within DNSSEC.[7] RFC 4025 designates IPSECKEY as the replacement for use with IPsec.[8]"
-   },
-   {
-      "type":"KX",
-      "decimal_value":36,
-      "rfc":"RFC 2230",
-      "description":"Key eXchanger record",
-      "func":"Used with some cryptographic systems (not including DNSSEC) to identify a key management agent for the associated domain-name. Note that this has nothing to do with DNS Security. It is Informational status, rather than being on the IETF standards-track. It has always had limited deployment, but is still in use."
-   },
-   {
-      "type":"LOC",
-      "decimal_value":29,
-      "rfc":"RFC 1876",
-      "description":"Location record",
-      "func":"Specifies a geographical location associated with a domain name"
-   },
-   {
-      "type":"MX",
-      "decimal_value":15,
-      "rfc":"RFC 1035[1]",
-      "description":"Mail exchange record",
-      "func":"Maps a domain name to a list of message transfer agents for that domain"
-   },
-   {
-      "type":"NAPTR",
-      "decimal_value":35,
-      "rfc":"RFC 3403",
-      "description":"Naming Authority Pointer",
-      "func":"Allows regular-expression-based rewriting of domain names which can then be used as URIs, further domain names to lookups, etc."
-   },
-   {
-      "type":"NS",
-      "decimal_value":2,
-      "rfc":"RFC 1035[1]",
-      "description":"Name server record",
-      "func":"Delegates a DNS zone to use the given authoritative name servers"
-   },
-   {
-      "type":"NSEC",
-      "decimal_value":47,
-      "rfc":"RFC 4034",
-      "description":"Next-Secure record",
-      "func":"Part of DNSSEC—used to prove a name does not exist. Uses the same format as the (obsolete) NXT record."
-   },
-   {
-      "type":"NSEC3",
-      "decimal_value":50,
-      "rfc":"RFC 5155",
-      "description":"NSEC record version 3",
-      "func":"An extension to DNSSEC that allows proof of nonexistence for a name without permitting zonewalking"
-   },
-   {
-      "type":"NSEC3PARAM",
-      "decimal_value":51,
-      "rfc":"RFC 5155",
-      "description":"NSEC3 parameters",
-      "func":"Parameter record for use with NSEC3"
-   },
-   {
-      "type":"PTR",
-      "decimal_value":12,
-      "rfc":"RFC 1035[1]",
-      "description":"Pointer record",
-      "func":"Pointer to a canonical name. Unlike a CNAME, DNS processing stops and just the name is returned. The most common use is for implementing reverse DNS lookups, but other uses include such things as DNS-SD."
-   },
-   {
-      "type":"RRSIG",
-      "decimal_value":46,
-      "rfc":"RFC 4034",
-      "description":"DNSSEC signature",
-      "func":"Signature for a DNSSEC-secured record set. Uses the same format as the SIG record."
-   },
-   {
-      "type":"RP",
-      "decimal_value":17,
-      "rfc":"RFC 1183",
-      "description":"Responsible person",
-      "func":"Information about the responsible person(s) for the domain. Usually an email address with the @ replaced by a ."
-   },
-   {
-      "type":"SIG",
-      "decimal_value":24,
-      "rfc":"RFC 2535",
-      "description":"Signature",
-      "func":"Signature record used in SIG(0) (RFC 2931) and TKEY (RFC 2930).[7] RFC 3755 designated RRSIG as the replacement for SIG for use within DNSSEC.[7]"
-   },
-   {
-      "type":"SOA",
-      "decimal_value":6,
-      "rfc":"RFC 1035[1] and RFC 2308[9]",
-      "description":"Start of [a zone of] authority record",
-      "func":"Specifies authoritative information about a DNS zone, including the primary name server, the email of the domain administrator, the domain serial number, and several timers relating to refreshing the zone."
-   },
-   {
-      "type":"SRV",
-      "decimal_value":33,
-      "rfc":"RFC 2782",
-      "description":"Service locator",
-      "func":"Generalized service location record, used for newer protocols instead of creating protocol-specific records such as MX."
-   },
-   {
-      "type":"SSHFP",
-      "decimal_value":44,
-      "rfc":"RFC 4255",
-      "description":"SSH Public Key Fingerprint",
-      "func":"Resource record for publishing SSH public host key fingerprints in the DNS System, in order to aid in verifying the authenticity of the host. RFC 6594 defines ECC SSH keys and SHA-256 hashes. See the IANA SSHFP RR parameters registry for details."
-   },
-   {
-      "type":"TA",
-      "decimal_value":32768,
-      "rfc":"N/A",
-      "description":"DNSSEC Trust Authorities",
-      "func":"Part of a deployment proposal for DNSSEC without a signed DNS root. See the IANA database and Weiler Spec for details. Uses the same format as the DS record."
-   },
-   {
-      "type":"TKEY",
-      "decimal_value":249,
-      "rfc":"RFC 2930",
-      "description":"Secret key record",
-      "func":"A method of providing keying material to be used with TSIG that is encrypted under the public key in an accompanying KEY RR.[10]"
-   },
-   {
-      "type":"TLSA",
-      "decimal_value":52,
-      "rfc":"RFC 6698",
-      "description":"TLSA certificate association",
-      "func":"A record for DNS-based Authentication of Named Entities (DANE). RFC 6698 defines \"The TLSA DNS resource record is used to associate a TLS server certificate or public key with the domain name where the record is found, thus forming a 'TLSA certificate association'\"."
-   },
-   {
-      "type":"TSIG",
-      "decimal_value":250,
-      "rfc":"RFC 2845",
-      "description":"Transaction Signature",
-      "func":"Can be used to authenticate dynamic updates as coming from an approved client, or to authenticate responses as coming from an approved recursive name server[11] similar to DNSSEC."
-   },
-   {
-      "type":"TXT",
-      "decimal_value":16,
-      "rfc":"RFC 1035[1]",
-      "description":"Text record",
-      "func":"Originally for arbitrary human-readable text in a DNS record. Since the early 1990s, however, this record more often carries machine-readable data, such as specified by RFC 1464, opportunistic encryption, Sender Policy Framework, DKIM, DMARC, DNS-SD, etc."
-   }
+    {
+        "type": "A",
+        "decimal_value": 1,
+        "rfc": "RFC 1035[1]",
+        "description": "Address record",
+        "func": "Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc."
+    },
+    {
+        "type": "AAAA",
+        "decimal_value": 28,
+        "rfc": "RFC 3596[2]",
+        "description": "IPv6 address record",
+        "func": "Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host."
+    },
+    {
+        "type": "AFSDB",
+        "decimal_value": 18,
+        "rfc": "RFC 1183",
+        "description": "AFS database record",
+        "func": "Location of database servers of an AFS cell. This record is commonly used by AFS clients to contact AFS cells outside their local domain. A subtype of this record is used by the obsolete DCE/DFS file system."
+    },
+    {
+        "type": "APL",
+        "decimal_value": 42,
+        "rfc": "RFC 3123",
+        "description": "Address Prefix List",
+        "func": "Specify lists of address ranges, e.g. in CIDR format, for various address families. Experimental."
+    },
+    {
+        "type": "CAA",
+        "decimal_value": 257,
+        "rfc": "RFC 6844",
+        "description": "Certification Authority Authorization",
+        "func": "DNS Certification Authority Authorization, constraining acceptable CAs for a host/domain"
+    },
+    {
+        "type": "CDNSKEY",
+        "decimal_value": 60,
+        "rfc": "RFC 7344",
+        "description": "",
+        "func": "Child copy of DNSKEY record, for transfer to parent"
+    },
+    {
+        "type": "CDS",
+        "decimal_value": 59,
+        "rfc": "RFC 7344",
+        "description": "Child DS",
+        "func": "Child copy of DS record, for transfer to parent"
+    },
+    {
+        "type": "CERT",
+        "decimal_value": 37,
+        "rfc": "RFC 4398",
+        "description": "Certificate record",
+        "func": "Stores PKIX, SPKI, PGP, etc."
+    },
+    {
+        "type": "CNAME",
+        "decimal_value": 5,
+        "rfc": "RFC 1035[1]",
+        "description": "Canonical name record",
+        "func": "Alias of one name to another: the DNS lookup will continue by retrying the lookup with the new name."
+    },
+    {
+        "type": "CSYNC",
+        "decimal_value": 62,
+        "rfc": "RFC 7477",
+        "description": "Child-to-Parent Synchronization",
+        "func": "Specify a synchronization mechanism between a child and a parent DNS zone. Typical example is declaring the same NS records in the parent and the child zone"
+    },
+    {
+        "type": "DHCID",
+        "decimal_value": 49,
+        "rfc": "RFC 4701",
+        "description": "DHCP identifier",
+        "func": "Used in conjunction with the FQDN option to DHCP"
+    },
+    {
+        "type": "DLV",
+        "decimal_value": 32769,
+        "rfc": "RFC 4431",
+        "description": "DNSSEC Lookaside Validation record",
+        "func": "For publishing DNSSEC trust anchors outside of the DNS delegation chain. Uses the same format as the DS record. RFC 5074 describes a way of using these records."
+    },
+    {
+        "type": "DNAME",
+        "decimal_value": 39,
+        "rfc": "RFC 6672",
+        "description": "Delegation name record",
+        "func": "Alias for a name and all its subnames, unlike CNAME, which is an alias for only the exact name. Like a CNAME record, the DNS lookup will continue by retrying the lookup with the new name."
+    },
+    {
+        "type": "DNSKEY",
+        "decimal_value": 48,
+        "rfc": "RFC 4034",
+        "description": "DNS Key record",
+        "func": "The key record used in DNSSEC. Uses the same format as the KEY record."
+    },
+    {
+        "type": "DS",
+        "decimal_value": 43,
+        "rfc": "RFC 4034",
+        "description": "Delegation signer",
+        "func": "The record used to identify the DNSSEC signing key of a delegated zone"
+    },
+    {
+        "type": "EUI48",
+        "decimal_value": 108,
+        "rfc": "RFC 7043",
+        "description": "MAC address (EUI-48)",
+        "func": "A 48-bit IEEE Extended Unique Identifier."
+    },
+    {
+        "type": "EUI64",
+        "decimal_value": 109,
+        "rfc": "RFC 7043",
+        "description": "MAC address (EUI-64)",
+        "func": "A 64-bit IEEE Extended Unique Identifier."
+    },
+    {
+        "type": "HINFO",
+        "decimal_value": 13,
+        "rfc": "RFC 8482",
+        "description": "Host Information",
+        "func": "Providing Minimal-Sized Responses to DNS Queries That Have QTYPE=ANY"
+    },
+    {
+        "type": "HIP",
+        "decimal_value": 55,
+        "rfc": "RFC 8005",
+        "description": "Host Identity Protocol",
+        "func": "Method of separating the end-point identifier and locator roles of IP addresses."
+    },
+    {
+        "type": "HTTPS",
+        "decimal_value": 65,
+        "rfc": "RFC 9460",
+        "description": "HTTPS Binding",
+        "func": "RR that improves performance for clients that need to resolve many resources to access a domain."
+    },
+    {
+        "type": "IPSECKEY",
+        "decimal_value": 45,
+        "rfc": "RFC 4025",
+        "description": "IPsec Key",
+        "func": "Key record that can be used with IPsec"
+    },
+    {
+        "type": "KEY",
+        "decimal_value": 25,
+        "rfc": "RFC 2535[3] and RFC 2930[4]",
+        "description": "Key record",
+        "func": "Used only for SIG(0) (RFC 2931) and TKEY (RFC 2930).[5] RFC 3445 eliminated their use for application keys and limited their use to DNSSEC.[6] RFC 3755 designates DNSKEY as the replacement within DNSSEC.[7] RFC 4025 designates IPSECKEY as the replacement for use with IPsec.[8]"
+    },
+    {
+        "type": "KX",
+        "decimal_value": 36,
+        "rfc": "RFC 2230",
+        "description": "Key Exchanger record",
+        "func": "Used with some cryptographic systems (not including DNSSEC) to identify a key management agent for the associated domain-name. Note that this has nothing to do with DNS Security. It is Informational status, rather than being on the IETF standards-track. It has always had limited deployment, but is still in use."
+    },
+    {
+        "type": "LOC",
+        "decimal_value": 29,
+        "rfc": "RFC 1876",
+        "description": "Location record",
+        "func": "Specifies a geographical location associated with a domain name"
+    },
+    {
+        "type": "MX",
+        "decimal_value": 15,
+        "rfc": "RFC 1035[1] and RFC 7505",
+        "description": "Mail exchange record",
+        "func": "List of mail exchange servers that accept email for a domain"
+    },
+    {
+        "type": "NAPTR",
+        "decimal_value": 35,
+        "rfc": "RFC 3403",
+        "description": "Naming Authority Pointer",
+        "func": "Allows regular-expression-based rewriting of domain names which can then be used as URIs, further domain names to lookups, etc."
+    },
+    {
+        "type": "NS",
+        "decimal_value": 2,
+        "rfc": "RFC 1035[1]",
+        "description": "Name server record",
+        "func": "Delegates a DNS zone to use the given authoritative name servers"
+    },
+    {
+        "type": "NSEC",
+        "decimal_value": 47,
+        "rfc": "RFC 4034",
+        "description": "Next Secure record",
+        "func": "Part of DNSSEC—used to prove a name does not exist. Uses the same format as the (obsolete) NXT record."
+    },
+    {
+        "type": "NSEC3",
+        "decimal_value": 50,
+        "rfc": "RFC 5155",
+        "description": "Next Secure record version 3",
+        "func": "An extension to DNSSEC that allows proof of nonexistence for a name without permitting zonewalking"
+    },
+    {
+        "type": "NSEC3PARAM",
+        "decimal_value": 51,
+        "rfc": "RFC 5155",
+        "description": "NSEC3 parameters",
+        "func": "Parameter record for use with NSEC3"
+    },
+    {
+        "type": "OPENPGPKEY",
+        "decimal_value": 61,
+        "rfc": "RFC 7929",
+        "description": "OpenPGP public key record",
+        "func": "A DNS-based Authentication of Named Entities (DANE) method for publishing and locating OpenPGP public keys in DNS for a specific email address using an OPENPGPKEY DNS resource record."
+    },
+    {
+        "type": "PTR",
+        "decimal_value": 12,
+        "rfc": "RFC 1035[1]",
+        "description": "PTR Resource Record [de]",
+        "func": "Pointer to a canonical name. Unlike a CNAME, DNS processing stops and just the name is returned. The most common use is for implementing reverse DNS lookups, but other uses include such things as DNS-SD."
+    },
+    {
+        "type": "RP",
+        "decimal_value": 17,
+        "rfc": "RFC 1183",
+        "description": "Responsible Person",
+        "func": "Information about the responsible person(s) for the domain. Usually an email address with the @ replaced by a ."
+    },
+    {
+        "type": "RRSIG",
+        "decimal_value": 46,
+        "rfc": "RFC 4034",
+        "description": "DNSSEC signature",
+        "func": "Signature for a DNSSEC-secured record set. Uses the same format as the SIG record."
+    },
+    {
+        "type": "SIG",
+        "decimal_value": 24,
+        "rfc": "RFC 2535",
+        "description": "Signature",
+        "func": "Signature record used in SIG(0) (RFC 2931) and TKEY (RFC 2930).[7] RFC 3755 designated RRSIG as the replacement for SIG for use within DNSSEC.[7]"
+    },
+    {
+        "type": "SMIMEA",
+        "decimal_value": 53,
+        "rfc": "RFC 8162[9]",
+        "description": "S/MIME cert association[10]",
+        "func": "Associates an S/MIME certificate with a domain name for sender authentication."
+    },
+    {
+        "type": "SOA",
+        "decimal_value": 6,
+        "rfc": "RFC 1035[1] and RFC 2308[11]",
+        "description": "Start of [a zone of] authority record",
+        "func": "Specifies authoritative information about a DNS zone, including the primary name server, the email of the domain administrator, the domain serial number, and several timers relating to refreshing the zone."
+    },
+    {
+        "type": "SRV",
+        "decimal_value": 33,
+        "rfc": "RFC 2782",
+        "description": "Service locator",
+        "func": "Generalized service location record, used for newer protocols instead of creating protocol-specific records such as MX."
+    },
+    {
+        "type": "SSHFP",
+        "decimal_value": 44,
+        "rfc": "RFC 4255",
+        "description": "SSH Public Key Fingerprint",
+        "func": "Resource record for publishing SSH public host key fingerprints in the DNS, in order to aid in verifying the authenticity of the host. RFC 6594 defines ECC SSH keys and SHA-256 hashes. See the IANA SSHFP RR parameters registry for details."
+    },
+    {
+        "type": "SVCB",
+        "decimal_value": 64,
+        "rfc": "RFC 9460",
+        "description": "Service Binding",
+        "func": "RR that improves performance for clients that need to resolve many resources to access a domain."
+    },
+    {
+        "type": "TA",
+        "decimal_value": 32768,
+        "rfc": "—",
+        "description": "DNSSEC Trust Authorities",
+        "func": "Part of a deployment proposal for DNSSEC without a signed DNS root. See the IANA database and Weiler Spec for details. Uses the same format as the DS record."
+    },
+    {
+        "type": "TKEY",
+        "decimal_value": 249,
+        "rfc": "RFC 2930",
+        "description": "Transaction Key record",
+        "func": "A method of providing keying material to be used with TSIG that is encrypted under the public key in an accompanying KEY RR.[12]"
+    },
+    {
+        "type": "TLSA",
+        "decimal_value": 52,
+        "rfc": "RFC 6698",
+        "description": "TLSA certificate association",
+        "func": "A record for DANE. RFC 6698 defines \"The TLSA DNS resource record is used to associate a TLS server certificate or public key with the domain name where the record is found, thus forming a 'TLSA certificate association'\"."
+    },
+    {
+        "type": "TSIG",
+        "decimal_value": 250,
+        "rfc": "RFC 2845",
+        "description": "Transaction Signature",
+        "func": "Can be used to authenticate dynamic updates as coming from an approved client, or to authenticate responses as coming from an approved recursive name server[13] similar to DNSSEC."
+    },
+    {
+        "type": "TXT",
+        "decimal_value": 16,
+        "rfc": "RFC 1035[1]",
+        "description": "Text record",
+        "func": "Originally for arbitrary human-readable text in a DNS record. Since the early 1990s, however, this record more often carries machine-readable data, such as specified by RFC 1464, opportunistic encryption, Sender Policy Framework, DKIM, DMARC, DNS-SD, etc."
+    },
+    {
+        "type": "URI",
+        "decimal_value": 256,
+        "rfc": "RFC 7553",
+        "description": "Uniform Resource Identifier",
+        "func": "Can be used for publishing mappings from hostnames to URIs."
+    },
+    {
+        "type": "ZONEMD",
+        "decimal_value": 63,
+        "rfc": "RFC 8976",
+        "description": "Message Digests for DNS Zones",
+        "func": "Provides a cryptographic message digest over DNS zone data at rest."
+    }
 ]
